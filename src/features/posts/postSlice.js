@@ -36,16 +36,16 @@ const postsSlice = createSlice({
     reducers: {
         postAdded: {
             reducer(state, action) {
-                state.push(action.payload)
+                state.push(action.payload) // 새 게시물을 추가
             },
-            prepare(title, content, userId) { // call back
+            prepare(title, content, userId) { // 사용자가 전달하는 인수를 받아서 실제 액션 객체를 생성하고 반환
                 return {
-                    payload: {
-                        id: nanoid(),
-                        title,
-                        content,
-                        date: new Date().toISOString(),
-                        userId,
+                    payload: { // 액션에 대한 데이터를 포함하는 객체
+                        id: nanoid(), // 고유한 ID를 생성
+                        title, // 게시물 제목을 사용자가 전달한 값으로 설정
+                        content, // 게시물 내용을 사용자가 전달한 값으로 설정
+                        date: new Date().toISOString(), // 현재 날짜와 시간을 ISO 문자열로 설정
+                        userId,  // 사용자 ID를 사용자가 전달한 값으로 설정
                         reactions: {
                             thumbsUp: 0,
                             wow: 0,
