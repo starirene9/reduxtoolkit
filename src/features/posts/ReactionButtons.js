@@ -24,7 +24,7 @@ const ReactionButtons = ({post}) => {
                     // post.id는 ReactionButtons 컴포넌트의 prop로부터 전달된 현재 게시물의 ID를 나타냅니다.
                     dispatch(reactionAdded({postId: post.id, reaction: name}))
                 }>
-                {emoji} {post.reactions[name]} // post.reactions[name]의 값을 가지고 오는거라고 보면 됨
+                {emoji} {post.reactions[name]}
             </button>
         );
     })

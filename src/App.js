@@ -8,9 +8,9 @@ function App() {
         <div className="App">
             <Counter/>
             <hr/>
-            <PostsList/>
-            <hr/>
             <AddPostForm/>
+            <hr/>
+            <PostsList/>
         </div>
     );
 }
