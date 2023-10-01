@@ -134,10 +134,13 @@ export const selectAllPosts = (state) => state.posts.posts; // 이런 식으로 
 export const getPostsStatus = (state) => state.posts.status; // 이런 식으로 변경 되어도 내보내기 추천함
 export const getPostsError = (state) => state.posts.error; // 이런 식으로 변경 되어도 내보내기 추천함
 
+export const selectPostById = (state, postId) =>
+    state.posts.posts.find(post => post.id === postId);
+
 export const {postAdded, reactionAdded} = postsSlice.actions
 export default postsSlice
 
 // imported 한 것들
 // npm i date-fns
 // npm i axios
-
+// npm i react-router-dom
